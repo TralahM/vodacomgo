@@ -31,6 +31,7 @@ type C2B struct {
 	Surname             string
 	Initials            string
 }
+
 type C2BResponse struct {
 	Amount              string `json:"Amount"`
 	CallBackChannel     string `json:"CallBackChannel"`
