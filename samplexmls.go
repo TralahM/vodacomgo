@@ -270,7 +270,7 @@ var C2BCRx = `<soapenv:Envelope xmlns:soapenv='http://schemas.xmlsoap.org/soap/e
           <value>-1</value><type>String</type>
         </dataItem>
         <dataItem>
-          <name>Conver sationID</name>
+          <name>ConversationID</name>
           <value>-1</value>
           <type>String</type>
         </dataItem>

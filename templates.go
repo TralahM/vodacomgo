@@ -178,3 +178,27 @@ var B2CT = `<?xml version="1.0" encoding="UTF-8"?>
     </soapenv:Body>
 </soapenv:Envelope>
 `
+
+var AckB2CT = `<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<response>
+  <dataItem>
+    <name>ResponseCode</name>
+    <type>String</type>
+    <value>200</value>
+  </dataItem>
+  <dataItem>
+    <name>RESULT_CODE</name>
+    <type>String</type>
+    <value>Received</value>
+  </dataItem>
+</response>
+`
+var AckC2BT = `<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<response>
+  <dataItem>
+    <name>ResponseCode</name>
+    <type>String</type>
+    <value>200</value>
+  </dataItem>
+</response>
+`

@@ -4,7 +4,7 @@ package vodacomgo
 
 import (
 	"encoding/json"
-	"fmt"
+	"log"
 	"reflect"
 )
 
@@ -40,7 +40,7 @@ func toResponse(lr interface{}, dt interface{}) []byte {
 	dataItemMap[v.Field(namevalx["name"]).String()] = (v.Field(namevalx["value"]).String())
 	lresmap := make(map[string]string)
 	for h := 0; h < u.NumField(); h++ {
-		// fmt.Printf("%s\t: %v\n", typeofU.Field(h).Name, u.Field(h).Interface())
+		// log.Printf("%s\t: %v\n", typeofU.Field(h).Name, u.Field(h).Interface())
 		name := typeofU.Field(h).Name
 		field := u.Field(h)
 		if _, ok := dataItemMap[name]; ok {
@@ -66,17 +66,13 @@ func (e *LoginEnvelope) ToResponse() LoginResponse {
 		SessionID:     e.Body.GetGenericResultResponse.SOAPAPIResult.Response.DataItem.Value,
 		EventID:       e.Header.Eventid.Text,
 	}
-	// fmt.Println(e.Header.Eventid.Text)
-	// fmt.Println(r.EventID)
 	for _, dit := range e.Body.GetGenericResultResponse.SOAPAPIResult.Request.DataItem {
 		jstr := toResponse(r, dit)
 		json.Unmarshal(jstr, &lrmobj)
 		r = lrmobj
 	}
-	// dt := e.Body.GetGenericResultResponse.SOAPAPIResult.Response.DataItem
-	// r.toResponse(dt)
 	r.EventID = e.Header.Eventid.Text
-	fmt.Printf("LoginResponse: %v eventid: %v\n", r, r.EventID)
+	log.Printf("LoginResponse: %v eventid: %v\n", r, r.EventID)
 	return r
 }
 
@@ -101,7 +97,7 @@ func (e *C2BEnvelope) ToResponse() C2BResponse {
 		r = c2ob
 	}
 	r.EventID = e.Header.Eventid.Text
-	fmt.Printf("C2BResponse: %v eventid: %v\n", r, r.EventID)
+	log.Printf("C2BResponse: %v eventid: %v\n", r, r.EventID)
 	return r
 }
 
@@ -126,7 +122,7 @@ func (e *B2CEnvelope) ToResponse() B2CResponse {
 		r = c2ob
 	}
 	r.EventID = e.Header.Eventid.Text
-	fmt.Printf("B2CResponse: %v eventid: %v\n", r, r.EventID)
+	log.Printf("B2CResponse: %v eventid: %v\n", r, r.EventID)
 	return r
 }
 
@@ -138,7 +134,7 @@ func (e *C2BCallbackEnvelope) ToResponse() C2BCallback {
 		json.Unmarshal(toResponse(r, dit), &cobj)
 		r = cobj
 	}
-	fmt.Printf("C2BCallback: %v\n", r)
+	log.Printf("C2BCallback: %v\n", r)
 	return r
 }
 
@@ -150,6 +146,6 @@ func (e *B2CCallbackEnvelope) ToResponse() B2CCallback {
 		json.Unmarshal(toResponse(r, dit), &cobj)
 		r = cobj
 	}
-	fmt.Printf("B2CCallback: %v\n", r)
+	log.Printf("B2CCallback: %v\n", r)
 	return r
 }
