@@ -4,7 +4,6 @@ package vodacomgo
 
 import (
 	"encoding/json"
-	"log"
 	"reflect"
 )
 
@@ -72,7 +71,7 @@ func (e *LoginEnvelope) ToResponse() LoginResponse {
 		r = lrmobj
 	}
 	r.EventID = e.Header.Eventid.Text
-	log.Printf("LoginResponse: %v eventid: %v\n", r, r.EventID)
+	// log.Printf("LoginResponse: %v eventid: %v\n", r, r.EventID)
 	return r
 }
 
@@ -97,7 +96,7 @@ func (e *C2BEnvelope) ToResponse() C2BResponse {
 		r = c2ob
 	}
 	r.EventID = e.Header.Eventid.Text
-	log.Printf("C2BResponse: %v eventid: %v\n", r, r.EventID)
+	// log.Printf("C2BResponse: %v eventid: %v\n", r, r.EventID)
 	return r
 }
 
@@ -122,7 +121,7 @@ func (e *B2CEnvelope) ToResponse() B2CResponse {
 		r = c2ob
 	}
 	r.EventID = e.Header.Eventid.Text
-	log.Printf("B2CResponse: %v eventid: %v\n", r, r.EventID)
+	// log.Printf("B2CResponse: %v eventid: %v\n", r, r.EventID)
 	return r
 }
 
@@ -134,7 +133,7 @@ func (e *C2BCallbackEnvelope) ToResponse() C2BCallback {
 		json.Unmarshal(toResponse(r, dit), &cobj)
 		r = cobj
 	}
-	log.Printf("C2BCallback: %v\n", r)
+	// log.Printf("C2BCallback: %v\n", r)
 	return r
 }
 
@@ -146,6 +145,6 @@ func (e *B2CCallbackEnvelope) ToResponse() B2CCallback {
 		json.Unmarshal(toResponse(r, dit), &cobj)
 		r = cobj
 	}
-	log.Printf("B2CCallback: %v\n", r)
+	// log.Printf("B2CCallback: %v\n", r)
 	return r
 }

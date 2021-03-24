@@ -1,0 +1,5 @@
+testserver-linux-amd64
+runserver-linux-amd64
+env.sh
+runserver
+runtestserver

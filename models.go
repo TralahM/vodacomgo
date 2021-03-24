@@ -37,7 +37,7 @@ type C2BResponse struct {
 	CallBackChannel     string `json:"CallBackChannel"`
 	CallBackDestination string `json:"CallBackDestination"`
 	Code                string `json:"code"`
-	CommandID           string `json:"CommandId"`
+	CommandId           string `json:"CommandID"`
 	Currency            string `json:"Currency"`
 	CustomerMSISDN      string `json:"CustomerMSISDN"`
 	Date                string `json:"Date"`
@@ -53,7 +53,6 @@ type C2BResponse struct {
 	ThirdPartyReference string `json:"ThirdPartyReference"`
 	TransactionID       string `json:"transactionID"`
 }
-
 
 type C2BCallback struct {
 	Amount                   string `json:"Amount"`
@@ -106,9 +105,9 @@ type B2CResponse struct {
 
 type B2CCallback struct {
 	Amount                   string `json:"Amount"`
-	ConversationID           string `json:"ConversationId"`
+	ConversationId           string `json:"ConversationID"`
 	InsightReference         string `json:"InsightReference"`
-	OriginatorConversationID string `json:"OriginatorConversationId"`
+	OriginatorConversationId string `json:"OriginatorConversationID"`
 	ResultCode               string `json:"ResultCode"`
 	ResultDesc               string `json:"ResultDesc"`
 	ResultType               string `json:"ResultType"`
