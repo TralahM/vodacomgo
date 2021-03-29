@@ -14,8 +14,10 @@ import (
 )
 
 type Handlers struct {
-	logger    *log.Logger
-	ipgClient *client.APIClient
+	logger         *log.Logger
+	ipgClient      *client.APIClient
+	c2bCallbackUrl string
+	b2cCallbackUrl string
 }
 
 func (h *Handlers) C2B(w http.ResponseWriter, r *http.Request) {
@@ -235,10 +237,12 @@ func (h *Handlers) Login(w http.ResponseWriter, r *http.Request) {
 	}
 }
 
-func NewHandlers(logger *log.Logger, ipgClient *client.APIClient) *Handlers {
+func NewHandlers(logger *log.Logger, ipgClient *client.APIClient, c2bCallbackUrl, b2cCallbackUrl string) *Handlers {
 	return &Handlers{
-		logger:    logger,
-		ipgClient: ipgClient,
+		logger:         logger,
+		ipgClient:      ipgClient,
+		c2bCallbackUrl: c2bCallbackUrl,
+		b2cCallbackUrl: b2cCallbackUrl,
 	}
 }
 
