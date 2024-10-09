@@ -104,11 +104,10 @@ c2b_acknowledgment:=[]byte(vodacomgo.AckC2BT)
 # Self-Promotion
 
 [![](https://img.shields.io/badge/Github-TralahM-green?style=for-the-badge&logo=github)](https://github.com/TralahM)
-[![](https://img.shields.io/badge/X-%40tralahtek-blue?style=for-the-badge&logo=x)](https://x.com/TralahM)
-[![TralahM](https://img.shields.io/badge/Kaggle-TralahM-purple.svg?style=for-the-badge&logo=kaggle)](https://kaggle.com/TralahM)
-[![TralahM](https://img.shields.io/badge/LinkedIn-TralahM-white.svg?style=for-the-badge&logo=linkedin)](https://linkedin.com/in/TralahM)
-
-[![Blog](https://img.shields.io/badge/Blog-tralahm.github.io-blue.svg?style=for-the-badge&logo=rss)](https://tralahm.github.io)
+[![](https://img.shields.io/badge/X-%40TralahM-blue?style=for-the-badge&logo=x)](https://x.com/TralahM)
+[![TralahM](https://img.shields.io/badge/Kaggle-purple.svg?style=for-the-badge&logo=kaggle)](https://kaggle.com/TralahM)
+[![TralahM](https://img.shields.io/badge/LinkedIn-white.svg?style=for-the-badge&logo=linkedin)](https://linkedin.com/in/TralahM)
+[![Blog](https://img.shields.io/badge/Blog-blue.svg?style=for-the-badge&logo=rss)](https://tralahm.github.io)
 
 [![TralahTek](https://img.shields.io/badge/Organization-TralahTek-cyan.svg?style=for-the-badge)](https://org.tralahtek.com)
 
